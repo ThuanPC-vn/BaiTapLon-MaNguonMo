@@ -1,0 +1,205 @@
+/*
+    Author     :   Christopher Robinson (original)
+    Email       :   christopher@edg3.co.uk (original)
+    Website     :   http://www.edg3.co.uk/ (original)
+    Modified by :   AI Assistant for color and style enhancements
+*/
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* general */
+a {
+    color: #5cb8ff; /* Light blue for links */
+    text-decoration: none;
+    font-family: 'Ubuntu', sans-serif; /* Apply Ubuntu font */
+}
+
+a:hover {
+    color: #2980b9; /* Darker blue on hover */
+    text-decoration: none;
+}
+
+/* body */
+body {
+    background: #ffffff;
+    color: #333; /* Darker text for better readability */
+    font: 0.9em 'Ubuntu', Arial, Helvetica, sans-serif; /* Slightly larger base font and Ubuntu */
+}
+
+/* header */
+#header {
+    border-bottom: 2px solid #8ac4ff; /* Slightly darker light blue for the border */
+    height: 100px; /* Increased header height */
+    margin: 0 auto;
+    width: 80%; /* Make header responsive */
+    max-width: 960px; /* Set a maximum width */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space out title and slogan */
+    align-items: center; /* Vertically align items */
+    padding: 10px 0;
+}
+
+#header h1 {
+    color: #2980b9; /* Darker blue for the main title */
+    font-size: 3.5em; /* Larger title */
+    letter-spacing: -2px;
+    text-align: left; /* Align title to the left */
+    margin-bottom: 0; /* Remove default bottom margin */
+    padding: 0;
+}
+
+#header h2 {
+    color: #8ac4ff; /* Light blue for the slogan */
+    font-size: 1.8em;
+    letter-spacing: -1px;
+    text-align: right; /* Align slogan to the right */
+    margin-top: 5px;
+    padding: 0;
+}
+
+/* navigation */
+#navigation {
+    background: #e0f2ff; /* Very light blue for navigation background */
+    margin: 20px auto 0; /* Add some top margin */
+    width: 80%; /* Make navigation responsive */
+    max-width: 960px;
+    height: auto; /* Adjust height based on content */
+    border-radius: 10px; /* Rounded corners for the navigation */
+    overflow: hidden; /* Clear floats inside */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+#navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Use flexbox for horizontal menu */
+    justify-content: space-around; /* Distribute items evenly */
+}
+
+#navigation li {
+    border-left: 1px solid #8ac4ff; /* Light blue separators */
+    flex-grow: 1; /* Distribute available space */
+}
+
+#navigation li:first-child {
+    border-left: none; /* Remove border from the first item */
+}
+
+#navigation a {
+    color: #333; /* Dark text for menu items */
+    display: block;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 8px; /* Slightly rounded corners for each link */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover transition */
+}
+
+#navigation a:hover {
+    background-color: #8ac4ff; /* Light blue background on hover */
+    color: #fff; /* White text on hover */
+}
+
+#navigation .active {
+    background-color: #2980b9; /* Dark blue for the active link */
+    color: #fff;
+    border-radius: 8px;
+}
+
+/* content */
+#content {
+    height: auto;
+    margin: 20px auto; /* Add top and bottom margin */
+    padding: 20px;
+    width: 80%; /* Make content responsive */
+    max-width: 960px;
+    background-color: #e6e6e6; /* Light gray background for content */
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
+#content h1 {
+    border-bottom: 2px dashed #8ac4ff; /* Light blue dashed border */
+    font-size: 2.2em;
+    padding: 20px 0;
+    color: #2980b9; /* Dark blue for content heading */
+    margin-bottom: 15px;
+}
+
+#content p {
+    padding: 15px 0;
+    line-height: 1.6; /* Improve readability */
+}
+
+#content h2 {
+    font-size: 1.6em;
+    color: #5cb8ff; /* Light blue for subheadings */
+    padding-top: 15px;
+    margin-bottom: 10px;
+}
+
+/* footer */
+#footer {
+    border-top: 2px solid #8ac4ff;
+    height: auto; /* Adjust height based on content */
+    margin: 20px auto 0; /* Add top margin */
+    padding: 15px;
+    text-align: center;
+    width: 80%; /* Make footer responsive */
+    max-width: 960px;
+    color: #777;
+    font-size: 0.9em;
+}
+
+#footer a {
+    color: #5cb8ff;
+}
+
+#footer a:hover {
+    color: #2980b9;
+}
+
+/* Added by Larry Ullman: */
+.error, .ad {
+    font-weight: bold;
+    color: #ff4d4d; /* More prominent red for errors */
+}
+
+input,
+select,
+.input {
+    padding: 8px; /* Slightly larger padding */
+    font-weight: bold;
+    font-size: 1em;
+    color: #007bff; /* Bootstrap blue for input text */
+    background: #f8f9fa; /* Light gray background for inputs */
+    border: 1px solid #ced4da; /* Light gray border */
+    border-radius: 5px; /* Rounded corners for inputs */
+}
+
+input:focus,
+select:focus,
+.input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Blue focus shadow */
+}
+
+
+#tech-logos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Căn giữa các logo theo chiều ngang */
+    align-items: center; /* Căn giữa các logo theo chiều dọc (nếu có nhiều hàng) */
+    gap: 20px; /* Khoảng cách giữa các logo */
+    padding: 20px; /* Thêm padding xung quanh container */
+}
+
+#tech-logos-container img {
+    width: 80px; /* Đặt kích thước chiều rộng mong muốn */
+    height: 80px; /* Đặt kích thước chiều cao mong muốn (để cân bằng) */
+    object-fit: contain; /* Đảm bảo ảnh không bị méo và nằm trọn trong khung */
+}
