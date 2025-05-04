@@ -1,5 +1,5 @@
 /*
-    Author     :   Christopher Robinson (original)
+    Author      :   Christopher Robinson (original)
     Email       :   christopher@edg3.co.uk (original)
     Website     :   http://www.edg3.co.uk/ (original)
     Modified by :   AI Assistant for color and style enhancements
@@ -27,6 +27,16 @@ body {
     background: #ffffff;
     color: #333; /* Darker text for better readability */
     font: 0.9em 'Ubuntu', Arial, Helvetica, sans-serif; /* Slightly larger base font and Ubuntu */
+    position: relative; /* Để các lớp phủ absolute có thể định vị dựa trên body */
+    height: 100vh;
+    width: 100vw;
+    background-color: #0f172a;
+    overflow: hidden;
+    display: flex; /* Để dễ dàng căn giữa nội dung nếu cần */
+    flex-direction: column; /* Xếp chồng nội dung theo chiều dọc */
+    align-items: center; /* Căn giữa theo chiều ngang */
+    justify-content: center; /* Căn giữa theo chiều dọc */
+    color: white; /* Màu chữ mặc định cho nội dung */
 }
 
 /* header */
@@ -40,15 +50,17 @@ body {
     justify-content: space-between; /* Space out title and slogan */
     align-items: center; /* Vertically align items */
     padding: 10px 0;
+    margin-top: 30px; /* Add top margin */
+    z-index: 1;
 }
 
 #header h1 {
-    color: #2980b9; /* Darker blue for the main title */
-    font-size: 3.5em; /* Larger title */
-    letter-spacing: -2px;
-    text-align: left; /* Align title to the left */
-    margin-bottom: 0; /* Remove default bottom margin */
-    padding: 0;
+    color: transparent; /* Làm cho chữ trong suốt để thấy gradient nền */
+    background: linear-gradient(to right, #007bff, #ffffff); /* Tạo gradient từ trái sang phải với nhiều màu */
+    -webkit-background-clip: text; /* Clip background vào hình dạng chữ (cho trình duyệt WebKit) */
+    background-clip: text; /* Clip background vào hình dạng chữ (tiêu chuẩn) */
+    font-size: 3em; /* Điều chỉnh kích thước chữ theo ý muốn */
+    letter-spacing: -1px;
 }
 
 #header h2 {
@@ -70,6 +82,7 @@ body {
     border-radius: 10px; /* Rounded corners for the navigation */
     overflow: hidden; /* Clear floats inside */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    z-index: 1;
 }
 
 #navigation ul {
@@ -109,6 +122,35 @@ body {
     border-radius: 8px;
 }
 
+/* background overlays */
+.grid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 6rem 4rem;
+    z-index: 1; /* Đặt lớp lưới phía sau nội dung */
+}
+
+.gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(
+        225deg,
+        rgba(6, 182, 212, 0.7),
+        rgba(139, 92, 246, 0.7) 50%,
+        rgba(236, 72, 153, 0.7)
+    );
+    z-index: 0; /* Đặt lớp gradient ở dưới lớp lưới */
+}
+
 /* content */
 #content {
     height: auto;
@@ -119,6 +161,8 @@ body {
     background-color: #e6e6e6; /* Light gray background for content */
     border-radius: 8px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    position: relative; /* Để có thể điều chỉnh z-index nếu cần */
+    z-index: 2; /* Đảm bảo nội dung nằm trên cả hai lớp phủ background */
 }
 
 #content h1 {
@@ -132,6 +176,7 @@ body {
 #content p {
     padding: 15px 0;
     line-height: 1.6; /* Improve readability */
+    color: #333;
 }
 
 #content h2 {
@@ -152,6 +197,7 @@ body {
     max-width: 960px;
     color: #777;
     font-size: 0.9em;
+    z-index: 1;
 }
 
 #footer a {
@@ -202,4 +248,189 @@ select:focus,
     width: 80px; /* Đặt kích thước chiều rộng mong muốn */
     height: 80px; /* Đặt kích thước chiều cao mong muốn (để cân bằng) */
     object-fit: contain; /* Đảm bảo ảnh không bị méo và nằm trọn trong khung */
+}
+
+.table-viewUser td,
+.table-viewUser b {
+    color: #0f172a;
+}
+
+
+/* In file includes/style.css */
+
+/* ... Các style CSS hiện tại của bạn ... */
+
+#register-form-container {
+    width: 50%; /* Điều chỉnh độ rộng container form */
+    margin: 30px auto; /* Canh giữa form theo chiều ngang và tạo khoảng cách trên dưới */
+    padding: 30px;
+    background-color: #f8f9fa; /* Màu nền nhạt cho form */
+    border: 1px solid #dee2e6; /* Viền nhẹ cho form */
+    border-radius: 8px; /* Bo tròn góc form */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng đổ nhẹ */
+}
+
+#register-form-container h1 {
+    color: #007bff; /* Màu tiêu đề form */
+    text-align: center; /* Canh giữa tiêu đề */
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ced4da; /* Đường kẻ dưới tiêu đề */
+    padding-bottom: 10px;
+}
+
+#register-form-container p {
+    margin-bottom: 15px; /* Khoảng cách giữa các dòng input */
+    display: flex; /* Sử dụng flexbox để căn chỉnh label và input */
+    align-items: center; /* Căn chỉnh label và input theo chiều dọc */
+}
+
+#register-form-container label {
+    width: 150px; /* Độ rộng cố định cho label */
+    margin-right: 15px; /* Khoảng cách giữa label và input */
+    font-weight: bold;
+    color: #495057; /* Màu chữ label */
+    text-align: left; /* Canh trái label */
+}
+
+#register-form-container input[type="text"],
+#register-form-container input[type="email"],
+#register-form-container input[type="password"] {
+    flex-grow: 1; /* Input sẽ chiếm phần không gian còn lại */
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1em;
+    color: #495057;
+}
+
+#register-form-container input[type="text"]:focus,
+#register-form-container input[type="email"]:focus,
+#register-form-container input[type="password"]:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Hiệu ứng focus */
+}
+
+#register-form-container input[type="submit"] {
+    background-color: #007bff; /* Màu nền nút submit */
+    color: white; /* Màu chữ nút submit */
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease; /* Hiệu ứng hover mượt mà */
+    display: block; /* Hiển thị nút submit trên một dòng riêng */
+    width: 100%; /* Nút submit chiếm toàn bộ chiều rộng container */
+}
+
+#register-form-container input[type="submit"]:hover {
+    background-color: #5cb8ff; /* Màu nền đậm hơn khi hover */
+    color: #1900ff;
+}
+
+#login-form-container {
+    width: 40%; /* Điều chỉnh độ rộng container form */
+    margin: 50px auto; /* Canh giữa form theo chiều ngang và tạo khoảng cách trên dưới */
+    padding: 30px;
+    background-color: #f8f9fa; /* Màu nền nhạt cho form */
+    border: 1px solid #dee2e6; /* Viền nhẹ cho form */
+    border-radius: 8px; /* Bo tròn góc form */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng đổ nhẹ */
+    text-align: center; /* Căn giữa toàn bộ nội dung container */
+}
+
+#login-form-container h1 {
+    color: #007bff; /* Màu tiêu đề form */
+    text-align: center; /* Canh giữa tiêu đề */
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ced4da; /* Đường kẻ dưới tiêu đề */
+    padding-bottom: 10px;
+}
+
+#login-form-container p {
+    margin-bottom: 15px; /* Khoảng cách giữa các dòng input */
+    display: flex; /* Sử dụng flexbox để căn chỉnh label và input */
+    align-items: center; /* Căn chỉnh label và input theo chiều dọc */
+    text-align: left; /* Canh trái nội dung p */
+}
+
+#login-form-container label {
+    width: 120px; /* Độ rộng cố định cho label */
+    margin-right: 15px; /* Khoảng cách giữa label và input */
+    font-weight: bold;
+    color: #495057; /* Màu chữ label */
+    text-align: left; /* Canh trái label */
+}
+
+#login-form-container input[type="text"],
+#login-form-container input[type="password"] {
+    flex-grow: 1; /* Input sẽ chiếm phần không gian còn lại */
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1em;
+    color: #495057;
+}
+
+#login-form-container input[type="text"]:focus,
+#login-form-container input[type="password"]:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Hiệu ứng focus */
+}
+
+#login-form-container input[type="submit"] {
+    background-color: #007bff; /* Màu nền nút submit */
+    color: white; /* Màu chữ nút submit */
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease; /* Hiệu ứng hover mượt mà */
+    display: block; /* Hiển thị nút submit trên một dòng riêng */
+    width: 100%; /* Nút submit chiếm toàn bộ chiều rộng container */
+    margin-top: 15px; /* Thêm khoảng cách phía trên nút submit */
+}
+
+#login-form-container input[type="submit"]:hover {
+    background-color: #0056b3; /* Màu nền đậm hơn khi hover */
+}
+
+.error {
+    color: #dc3545; /* Màu đỏ cho thông báo lỗi */
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.register-link {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #6c757d;
+}
+
+.register-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+
+.follower {
+    width: 20px; /* Điều chỉnh kích thước hình tròn */
+    height: 20px; /* Điều chỉnh kích thước hình tròn */
+    border: 3px solid black; /* Viền đen 3px */
+    border-radius: 50%; /* Tạo hình tròn */
+    position: absolute;
+    pointer-events: none;
+    background-color: transparent; /* Làm cho hình tròn rỗng */
+    /* Thêm transition để tạo độ trễ */
+    transition: transform 0.2s ease-out; /* Điều chỉnh thời gian và kiểu animation */
+    z-index: 3;
 }

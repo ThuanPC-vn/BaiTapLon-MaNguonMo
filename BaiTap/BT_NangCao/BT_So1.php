@@ -1,20 +1,13 @@
 <?php
 // Tạo một số nguyên dương ngẫu nhiên trong khoảng từ 1 đến 10
 $randomNumber = rand(1, 10);
+
+$page_title = 'BT So1';
+include('../../includes/header.php');
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bảng Cửu Chương</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-        }
+        
         table {
             margin: 0 auto;
             border-collapse: collapse;
@@ -37,8 +30,7 @@ $randomNumber = rand(1, 10);
             background-color: #ddd;
         }
     </style>
-</head>
-<body>
+
     <h1>Bảng Cửu Chương <?php echo $randomNumber; ?></h1>
     <table>
         <thead>
@@ -58,5 +50,8 @@ $randomNumber = rand(1, 10);
             ?>
         </tbody>
     </table>
-</body>
-</html>
+    <p class="register-link">Wanna back site? <a href="#" onclick="history.back()"> Back</a></p>    
+
+<?php
+include('../../includes/footer.php');
+?>

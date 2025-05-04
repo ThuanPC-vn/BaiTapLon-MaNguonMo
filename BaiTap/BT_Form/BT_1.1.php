@@ -1,18 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Nhập/Xuất dữ liệu</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-        }
 
+<?php
+
+$page_title = 'BT 1.1';
+include('../../includes/header.php');
+?>
+    <style>
         form {
             background-color: #fff;
             padding: 20px;
@@ -59,19 +51,24 @@
             text-align: center;
         }
     </style>
-</head>
-<body>
-    <form action="" name="myform" method="post">
+
+
+    <form action="BT_1.1.php" name="myform" method="post">
         <label for="Name">Tên của bạn:</label>
         <input type="text" name="Name" id="Name" value="<?php if(isset($_POST['Name'])) echo $_POST['Name'];?>" />
         <br>
         <input type="submit" value="Gửi">
     </form>
+    <p class="register-link">Wanna back site? <a href="#" onclick="history.back()"> Back</a></p>
 
     <?php
         if (isset($_POST["Name"])) {
             echo "<div class='result'>Halluuu:3 " . $_POST["Name"] . "</div>";
         }
     ?>
-</body>
-</html>
+
+
+
+<?php
+include('../../includes/footer.php');
+?>

@@ -23,5 +23,7 @@ include ('includes/header.php');
 echo '<h1>Logged Out!</h1>
 <p>You are now logged out!</p>';
 
+echo '<p><a href="index.php">Login</a></p>';
+
 include ('includes/footer.php');
 ?>

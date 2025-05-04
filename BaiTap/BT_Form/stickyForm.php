@@ -1,18 +1,10 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Information</title>
+<?php
+
+$page_title = 'BT 1.6';
+include('../../includes/header.php');
+?>
+   
     <style>
-        body {
-            font-family: sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-        }
 
         form {
             background-color: #fff;
@@ -89,19 +81,18 @@
             /* text-align: center;  */
         }
     </style>
-</head>
-<body>
+
     <form align='center' action="" method="post">
         <fieldset>
             <legend>Enter your information in the form below</legend>
             <table>
                 <tr>
                     <td>Name:</td>
-                    <td><input type='text' name='name' value="<?php echo $name;?>"/></td>
+                    <td><input type='text' name='name' value=""/></td>
                 </tr>
                 <tr>
                     <td>Email address:</td>
-                    <td><input type='text' name='email' value="<?php echo $email;?>"/></td>
+                    <td><input type='text' name='email' value=""/></td>
                 </tr>
                 <tr>
                     <td>Gender:</td>
@@ -136,6 +127,7 @@
             </table>
         </fieldset>
     </form>
+    <p class="register-link">Wanna back site? <a href="#" onclick="history.back()"> Back</a></p>
 
     <?php 
         if($_SERVER['REQUEST_METHOD']=='POST') { 
@@ -151,5 +143,7 @@
             }
         }
     ?>
-</body>
-</html>
+
+<?php
+include('../../includes/footer.php');
+?>

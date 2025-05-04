@@ -1,7 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Input/Output data</title>
+<?php
+
+$page_title = 'BT 1.3';
+include('../../includes/header.php');
+?>
+    
     <style>
         body {
             font-family: sans-serif;
@@ -60,19 +62,21 @@
             text-align: center;
         }
     </style>
-</head>
-<body>
+
     <form action="" name="myform" method="post">
         <label for="comment">Your comment:</label>
         <textarea name="comment" id="comment" rows="3" cols="40"><?php if(isset($_POST['comment'])) echo $_POST['comment']; ?></textarea>
         <br>
         <input type="submit" value="Submit">
     </form>
+    <p class="register-link">Wanna back site? <a href="#" onclick="history.back()"> Back</a></p>
 
     <?php
         if (isset($_POST["comment"])) {
             echo "<div class='result'>Your comment: " . $_POST["comment"] . "</div>";
         }
     ?>
-</body>
-</html>
+
+<?php
+include('../../includes/footer.php');
+?>

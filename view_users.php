@@ -61,7 +61,7 @@ $q = "SELECT last_name, first_name, DATE_FORMAT(registration_date, '%d/%c/%Y') A
 $r = @mysqli_query ($dbc, $q); // Run the query.
 
 // Table header:
-echo '<table align="center" cellspacing="0" cellpadding="5" width="75%">
+echo '<table class="table-viewUser" align="center" cellspacing="0" cellpadding="5" width="75%">
 <tr>
 	<td align="left"><b>Edit</b></td>
 	<td align="left"><b>Delete</b></td>

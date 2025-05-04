@@ -1,4 +1,7 @@
 <?php
+$page_title = 'BT So1';
+include('../../includes/header.php');
+
 // Tạo một số ngẫu nhiên n trong miền [-50, 50]
 $n = rand(-50, 50);
 
@@ -26,4 +29,8 @@ foreach ($array as $value) {
 }
 
 echo "Tổng các phần tử chẵn trong mảng: $evenSum";
+
+echo "<p class='register-link'>Wanna back site? <a href='#' onclick='history.back()'> Back</a></p> ";
+
+include('../../includes/footer.php');
 ?>

@@ -1,4 +1,7 @@
 <?php
+$page_title = 'BT So1';
+include('../../includes/header.php');
+
 // Tạo ngẫu nhiên một số nguyên trong khoảng [-100, 100]
 $randomNumber = rand(-100, 100);
 
@@ -29,4 +32,8 @@ if (isPrime($randomNumber)) {
 } else {
     echo "Số $randomNumber không phải là số nguyên tố.";
 }
+
+echo "<p class='register-link'>Wanna back site? <a href='#' onclick='history.back()'> Back</a></p> ";
+
+include('../../includes/footer.php');
 ?>

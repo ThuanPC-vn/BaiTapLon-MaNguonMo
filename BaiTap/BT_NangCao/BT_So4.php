@@ -12,14 +12,12 @@ for ($i = 0; $i < $m; $i++) {
     }
     $matrix[] = $row;
 }
+
+$page_title = 'BT So1';
+include('../../includes/header.php');
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hiển Thị Ma Trận</title>
+
     <style>
         table {
             border-collapse: collapse;
@@ -33,8 +31,7 @@ for ($i = 0; $i < $m; $i++) {
             text-align: center;
         }
     </style>
-</head>
-<body>
+
     <h1>Ma Trận Kích Thước <?php echo $m . "x" . $n; ?></h1>
     <table>
         <?php foreach ($matrix as $row): ?>
@@ -45,5 +42,8 @@ for ($i = 0; $i < $m; $i++) {
             </tr>
         <?php endforeach; ?>
     </table>
-</body>
-</html>
+    <p class="register-link">Wanna back site? <a href="#" onclick="history.back()"> Back</a></p> 
+
+<?php
+include('../../includes/footer.php');
+?>

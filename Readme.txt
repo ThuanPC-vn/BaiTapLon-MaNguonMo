@@ -56,3 +56,6 @@
     * Sau khi đăng nhập với user với quyền User thì trang sẽ có mục Home Page | Change Password | Logout | Profile | Bài Tập.
 
     * Sau khi đăng nhập với user với quyền Admin thì trang sẽ có mục Home Page | View Users | Change Password | Logout | Profile | Bài Tập.
+
+
+* **Có theo dõi qua trình mình làm dự án thông qua Github của mình:** Link GitHub https://github.com/ThuanPC-vn/BaiTapLon-MaNguonMo .

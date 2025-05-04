@@ -1,8 +1,8 @@
 <?php # Script 3.4 - index.php
-$page_title = 'Welcome to this Site!';
+$page_title = 'Chào mừng đến với website của Thuận!';
 include ('includes/header.php');
 ?>
-<h1>Chào mừng đến với website của Thuận - Quyền hạn: Admin</h1>
+<h1>Chào mừng đến với website của Thuận - Quyền hạn: User</h1>
 <p>Trang web này được tạo ra bởi Huỳnh Lê Minh Thuận (Taki) của lớp CC23TTH đến từ trường NTU.</p>
 <h2>Những công nghệ được sử dụng trong dự án này:</h2>
 <p> - Dùng cho frontend: HTML, CSS, JavaScript</p>

@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Input data</title>
+<?php
+
+$page_title = 'BT 1.2';
+include('../../includes/header.php');
+?>
+
     <style>
-        body {
-            font-family: sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-        }
 
         form {
             background-color: #fff;
@@ -59,8 +52,7 @@
             text-align: center;
         }
     </style>
-</head>
-<body>
+
     <form action="" name="myform" method="post">
         <label for="firstName">First Name:</label>
         <input type="text" name="Name[]" id="firstName" size="20" value="<?php if(isset($_POST['Name'])) echo $_POST['Name'][0];?>" /><br>
@@ -70,11 +62,15 @@
 
         <input type="submit" value="Submit">
     </form>
+    <p class="register-link">Wanna back site? <a href="#" onclick="history.back()"> Back</a></p>
 
     <?php
         if (isset($_POST['Name'])) {
             echo "<div class='result'>Chào bạn " . $_POST['Name'][0] . " " . $_POST['Name'][1] . "</div>";
         }
     ?>
-</body>
-</html>
+
+
+<?php
+include('../../includes/footer.php');
+?>

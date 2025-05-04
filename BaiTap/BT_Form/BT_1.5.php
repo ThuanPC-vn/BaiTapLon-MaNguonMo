@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Radio Button Selection</title>
+<?php
+
+$page_title = 'BT 1.5';
+include('../../includes/header.php');
+?>
+
+    
     <style>
-        body {
-            font-family: sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-        }
 
         form {
             background-color: #fff;
@@ -54,23 +48,25 @@
             text-align: center;
         }
     </style>
-</head>
-<body>
+
     <form action="" name="myform" method="post">
         <label>
             <input type="radio" name="radGT" value="Nam" <?php if(isset($_POST['radGT']) && $_POST['radGT'] == 'Nam') echo 'checked="checked"'; ?> checked/> Male
         </label>
         <label>
-            <input type="radio" name="radGT" value="Nu" <?php if(isset($_POST['radGT']) && $_POST['radGT'] == 'Nu') echo 'checked="checked"'; ?>/> Female
+            <input type="radio" name="radGT" value="Nu" <?php if(isset($_POST['radGT']) && $_POST['radGT'] == 'Nữ') echo 'checked="checked"'; ?>/> Female
         </label>
 
         <input type="submit" value="Submit">
     </form>
+    <p class="register-link">Wanna back site? <a href="#" onclick="history.back()"> Back</a></p>
 
     <?php
         if (isset($_POST['radGT'])) {
             echo "<div class='result'>Gender: " . $_POST['radGT'] . "</div>";
         }
     ?>
-</body>
-</html>
+
+<?php
+include('../../includes/footer.php');
+?>

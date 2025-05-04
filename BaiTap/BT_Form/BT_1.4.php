@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Checkbox Selection</title>
+<?php
+
+$page_title = 'BT 1.4';
+include('../../includes/header.php');
+?>
+
     <style>
-        body {
-            font-family: sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-        }
 
         form {
             background-color: #fff;
@@ -54,8 +47,7 @@
             text-align: center;
         }
     </style>
-</head>
-<body>
+
     <form method="post" action="">
         <label>
             <input type="checkbox" name="chk1" value="en" 
@@ -67,6 +59,7 @@
         </label>
         <input type="submit" value="Submit">
     </form>
+    <p class="register-link">Wanna back site? <a href="#" onclick="history.back()"> Back</a></p>
 
     <?php
         if(isset($_POST['chk1']) || isset($_POST['chk2'])) {
@@ -76,5 +69,7 @@
             echo "</div>";
         }
     ?>
-</body>
-</html>
+
+<?php
+include('../../includes/footer.php');
+?>

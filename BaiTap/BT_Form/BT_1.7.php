@@ -1,7 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Listbox Selection</title>
+<?php
+
+$page_title = 'BT 1.7';
+include('../../includes/header.php');
+?>
+
     <style>
         body {
             font-family: sans-serif;
@@ -72,6 +74,7 @@
             <input type="submit" name="submit" value="Submit your order">
         </p>
     </form>
+    <p class="register-link">Wanna back site? <a href="#" onclick="history.back()"> Back</a></p>
 
     <?php
         if (isset($_POST['lunch'])) {
@@ -83,5 +86,7 @@
             echo "</div>";
         }
     ?>
-</body>
-</html>
+
+<?php
+include('../../includes/footer.php');
+?>
